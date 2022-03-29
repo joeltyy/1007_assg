@@ -347,7 +347,7 @@ int main()
             /*
                 check if previous process has finished running and end time is earlier than arrival time of current process
                 if so, set common burst time counter to be Arrival Time for current process
-                however, common burst time counter should only be changed once, and that is the before the firts
+                however, common burst time counter should only be changed once, and that is the before the first run of the current process
             */
             if (prev_proc->burst_time == 0 && prev_proc->end_time < current_proc->arrival_time && current_proc->run_count == 0)
             {
