@@ -19,6 +19,7 @@ typedef struct
         5. Waiting Time (Turnaround Time - Burst Time)
         6. Process End Time
         7. Turnaround Time (Process End Time - Process Arrival Time)
+        8. Run Count
     */
     int id, arrival_time, original_burst_time, burst_time, waiting_time, end_time, turnaround_time, run_count;
 } Process;
