@@ -260,7 +260,7 @@ int calculate_max_tt(Process_Array *proc_array){
     return max_tt;
 }
 
-int main()
+int main(int argc, char **argv)
 {
     int time_quantum, max_waiting_time, max_turnaround_time;
     float avg_waiting_time, avg_turnaround_time;
@@ -271,15 +271,19 @@ int main()
 
     // read file and add each process to process array
     // readFile("proc_time-same_arrival_time.txt", proc_array); // file for processes that all arrive at the same time
-    // readFile("process_timings.txt", proc_array); // file for processes that arrive at different times
+    if (argc < 2){
+        printf("Usage: ./assg.exe <filename / file path>");
+        exit(0);
+    }
+    readFile("process_timings.txt", proc_array); // file for processes that arrive at different times      
 
     // test cases for different arrival times
-    Process *proc_1 = add_proc(proc_array, 1, 9, 4);
-    Process *proc_2 = add_proc(proc_array, 2, 100, 6);
-    Process *proc_3 = add_proc(proc_array, 3, 10, 8);
-    Process *proc_4 = add_proc(proc_array, 4, 1, 5);
-    Process *proc_5 = add_proc(proc_array, 5, 103, 4);
-    Process *proc_6 = add_proc(proc_array, 6, 2, 9);
+    // Process *proc_1 = add_proc(proc_array, 1, 9, 4);
+    // Process *proc_2 = add_proc(proc_array, 2, 100, 6);
+    // Process *proc_3 = add_proc(proc_array, 3, 10, 8);
+    // Process *proc_4 = add_proc(proc_array, 4, 1, 5);
+    // Process *proc_5 = add_proc(proc_array, 5, 103, 4);
+    // Process *proc_6 = add_proc(proc_array, 6, 2, 9);
 
     // test cases for same arrival times
     // Process *proc_1 = add_proc(proc_array, 1, 0, 4);
