@@ -40,12 +40,12 @@ Algorithm: Variation of Round Robin
         2. Check if Remaining Burst Time of current_proc is less than 1/2 of TQ, run Process fully if so
             1. Add Remaining Burst Time of current_proc to time_counter
             2. Set Burst Time of current_proc to be 0
-  5. Set End Time of current_proc to be the same as time_counter
-  6. Check if Burst Time of current_proc is 0, if so:
-    1. Calculate Waiting and Turnaround Time for current_proc
-  7. Increase Run Count of current_proc
-  8. Check if End Time of current_proc is earlier than Arrival Time of next_proc
-    1. Go to first unfinished Process in the Array
-  9. Check if all Processes have finished running, exit loop if so
+    5. Set End Time of current_proc to be the same as time_counter
+    6. Check if Burst Time of current_proc is 0, if so:
+        1. Calculate Waiting and Turnaround Time for current_proc
+    7. Increase Run Count of current_proc
+    8. Check if End Time of current_proc is earlier than Arrival Time of next_proc
+        1. Go to first unfinished Process in the Array
+    9. Check if all Processes have finished running, exit loop if so
 5. Print out results
 6. Clear memory used by Process Array
