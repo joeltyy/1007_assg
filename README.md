@@ -27,10 +27,10 @@ Algorithm: Variation of Round Robin
 2. Open file for reading, and add each line as a Process to the Process Array 
 3. Initialize TQ as Average Burst Time of Process Array / 2
 4. For each Process in Process Array
-  1. Check if PC == total_processes, if so, reset PC to 0
-  2. Assign Pointers for current, next and previous process (current_proc, next_proc, prev_proc)
-    1. If prev_proc has finished running AND End Time for prev_proc is earlier than Arrival Time of current_proc AND Run Count of current_proc is 0,
-      1. Set time_counter to be Arrival Time of current_proc
+    1. Check if PC == total_processes, if so, reset PC to 0
+    2. Assign Pointers for current, next and previous process (current_proc, next_proc, prev_proc)
+        1. If prev_proc has finished running AND End Time for prev_proc is earlier than Arrival Time of current_proc AND Run Count of current_proc is 0,
+            1. Set time_counter to be Arrival Time of current_proc
   3. Check if Burst Time of current_proc is 0, move to next Process if so
   4. Else, run Process
     1. If Burst Time of current_proc is more than TQ,
