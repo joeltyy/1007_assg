@@ -275,7 +275,7 @@ int main(int argc, char **argv)
         printf("Usage: ./assg.exe <filename / file path>");
         exit(0);
     }
-    readFile("process_timings.txt", proc_array); // file for processes that arrive at different times      
+    readFile(argv[1], proc_array); // file for processes that arrive at different times      
 
     // test cases for different arrival times
     // Process *proc_1 = add_proc(proc_array, 1, 9, 4);
