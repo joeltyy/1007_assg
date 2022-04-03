@@ -294,12 +294,27 @@ int main(int argc, char **argv)
 
     Process *current_proc, *next_proc, *prev_proc;
 
-    // set initial time quantum to the nearest int rounded down from avg burst time * 25%
+    // set initial time quantum to the nearest int rounded down from avg burst time * x%
     // number can be changed as u wish
-    time_quantum = ((int)proc_array->avg_burst_time * 0.5);
+    time_quantum = ((int)proc_array->avg_burst_time * 1);
 
     // sort processes based on arrival time
     qsort(proc_array->process_list, proc_array->total_processes, sizeof(Process), compare_process);
+    // sort process further based on burst time, where the lower burst time will be in front
+    for (int i=0; i<proc_array->total_processes-1; i++){
+        Process cp = proc_array->process_list[i];
+        Process np = proc_array->process_list[i+1];
+        if (cp.arrival_time == np.arrival_time){
+            if (cp.burst_time > np.burst_time){
+                Process tmp = cp;
+                proc_array->process_list[i] = np;
+                proc_array->process_list[i+1] = tmp;
+            }
+        }
+        else{
+            continue;
+        }
+    }
 
     printf("Sorted Processes: \n");
     printf("Process\tArrival Time\tBurst Time\n");

@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": ["process_timings.txt"],
+            "args": ["..\\data\\test_data_1.txt"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
