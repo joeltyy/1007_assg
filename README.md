@@ -26,7 +26,8 @@ Algorithm: Variation of Round Robin
 1. Initialize empty Process Array
 2. Open file for reading, and add each line as a Process to the Process Array 
 3. Initialize TQ as Average Burst Time of Process Array / 2
-4. For each Process in Process Array
+4. Sort Processes in Array based on Arrival Time, and then by Burst Time
+5. For each Process in Process Array
     1. Check if PC == total_processes, if so, reset PC to 0
     2. Assign Pointers for current, next and previous process (current_proc, next_proc, prev_proc)
         1. If prev_proc has finished running AND End Time for prev_proc is earlier than Arrival Time of current_proc AND Run Count of current_proc is 0,
@@ -47,5 +48,5 @@ Algorithm: Variation of Round Robin
     8. Check if End Time of current_proc is earlier than Arrival Time of next_proc
         1. Go to first unfinished Process in the Array
     9. Check if all Processes have finished running, exit loop if so
-5. Print out results
-6. Clear memory used by Process Array
+6. Print out results
+7. Clear memory used by Process Array
